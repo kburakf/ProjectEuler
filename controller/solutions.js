@@ -179,11 +179,10 @@ module.exports.q9 = () => {
     var c2 = Math.pow(c, 2)
 
     for (a = 0; a < 1000; a++) {
-        for (b = 0; b < 1000; b++) {
-            for (c = 0; c < 1000; c++) {
-                if (a < b && b < c && a2 + b2 == c2 && a + b + c == 1000) {
-                    console.log(a * b * c)
-                }
+        for (b = a; b < 1000; b++) {
+            c = a2 + b2 * 0.5
+            if (a + b + c == 1000) {
+
             }
         }
     }
@@ -343,4 +342,89 @@ module.exports.q13 = () => {
         result += Number(numbers.slice(i * 50, i * 50 + 50))
     }
     console.log(parseInt(result / (10 ** (52 - 10))));
+}
+
+// SOLUTION 14
+
+module.exports.q14 = () => {
+    const number = 1000000;
+
+    var maxChain = 0,
+        sequence
+
+    for (var i = 2; i < number; i++) {
+        sequence = i;
+        counter = 1
+        while (sequence != 1) {
+            if ((sequence % 2) == 0)
+                sequence = sequence / 2
+            else
+                sequence = sequence * 3 + 1
+
+            counter++
+        }
+        if (counter > maxChain) {
+            maxChain = counter
+            maxNumber = i
+        }
+    }
+    console.log("Max chain: " + maxChain)
+    console.log("Max chains number: " + maxNumber)
+}
+// SOLUTION 15
+
+module.exports.q15 = () => {
+
+}
+
+// SOLUTION 16
+
+module.exports.q16 = () => {
+    let number = String(BigInt(2 ** 1000))
+    number = number.split("")
+    let sum = 0
+    for (let item of number)
+        sum += parseInt(item)
+    console.log(sum)
+}
+
+// SOLUTION 17
+
+module.exports.q17 = () => {
+    let triangle =
+        "3" +
+        "7 4" +
+        "2 4 6" +
+        "8 5 9 3"
+
+    triangle = triangle.toString().split("")
+}
+
+// SOLUTION 18
+
+module.exports.q18 = () => {
+
+}
+
+// SOLUTION 19
+
+module.exports.q19 = () => {
+
+}
+
+// SOLUTION 20
+
+module.exports.q20 = () => {
+    let sum = 0
+    let factorial = 1
+
+    for (let i = 1; i <= 100; i++)
+        factorial = BigInt(factorial)*BigInt(i)
+    
+    factorial = String(BigInt(factorial)).split("")
+
+    for (let number of factorial)
+        sum += parseInt(number)
+
+    console.log(sum)
 }

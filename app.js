@@ -33,7 +33,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', controller.q10);
 // app.use('/', controller.q11);
 // app.use('/', controller.q12);
-app.use('/', controller.q13);
+// app.use('/', controller.q13);
+// app.use('/', controller.q14);
+// app.use('/', controller.q15);
+// app.use('/', controller.q16);
+// app.use('/', controller.q17);
+// app.use('/', controller.q18);
+// app.use('/', controller.q19);
+app.use('/', controller.q20);
 
 
 
