@@ -173,19 +173,17 @@ module.exports.q8 = () => {
 // SOLUTION 9
 
 module.exports.q9 = () => {
-    var a, b, c, sum, multiple
-    var a2 = Math.pow(a, 2)
-    var b2 = Math.pow(b, 2)
-    var c2 = Math.pow(c, 2)
+    var a, b, c, sum, c2
 
     for (a = 0; a < 1000; a++) {
         for (b = a; b < 1000; b++) {
-            c = a2 + b2 * 0.5
-            if (a + b + c == 1000) {
-
-            }
+            c2 = a ** 2 + b ** 2
+            c = Math.sqrt(c2)
+            if (a + b + c == 1000)
+                sum = a * b * c
         }
     }
+    console.log(sum)
 }
 
 // SOLUTION 10
@@ -217,17 +215,32 @@ module.exports.q11 = () => {
 // SOLUTION 12
 
 module.exports.q12 = () => {
-    var i = 2,
-        j, count = 0
-    while (count < 3) {
-        for (j = Math.ceil(Math.sqrt(i)); 1 < j; j--) {
-            for (i; i <= j; i++) {
-                if (j % i == 0) {
-                    count++
-                    console.log(count)
-                }
+    var x = 0,
+        y = 1
+
+    while (factors(x).length <= 500) {
+        x += y
+        y++
+    }
+
+    console.log(x)
+
+    function factors(n) {
+        let arr = [],
+            i = 1
+        max = n
+
+        while (i < max) {
+            if (n % i === 0) {
+                arr.push(i)
+                let k = n / i
+                if (i != k)
+                    arr.push(k)
+                max = k
             }
+            i++
         }
+        return arr.sort((a, b) => a - b)
     }
 }
 
@@ -375,6 +388,24 @@ module.exports.q14 = () => {
 
 module.exports.q15 = () => {
 
+    let solution = size => {
+
+        var dp = new Array(size + 1)
+        for (var i = 0; i <= size; i++)
+            dp[i] = new Array(size + 1).fill(0)
+
+        dp[0][0] = 1
+
+        for (var i = 0; i <= size; i++) {
+            for (var j = 0; j <= size; j++) {
+                if (i) dp[i][j] += dp[i - 1][j]
+                if (j) dp[i][j] += dp[i][j - 1]
+            }
+        }
+        return dp[size][size]
+    }
+
+    console.log(solution(20))
 }
 
 // SOLUTION 16
@@ -419,8 +450,8 @@ module.exports.q20 = () => {
     let factorial = 1
 
     for (let i = 1; i <= 100; i++)
-        factorial = BigInt(factorial)*BigInt(i)
-    
+        factorial = BigInt(factorial) * BigInt(i)
+
     factorial = String(BigInt(factorial)).split("")
 
     for (let number of factorial)
