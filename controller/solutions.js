@@ -99,7 +99,6 @@ module.exports.q6 = () => {
         sum += i
     }
     sum = Math.pow(sum, 2)
-    //console.log(sum)
 
     var sum2 = 0
     for (var j = 1; j <= 100; j++) {
@@ -458,4 +457,21 @@ module.exports.q20 = () => {
         sum += parseInt(number)
 
     console.log(sum)
+}
+
+// SOLUTION 25
+
+module.exports.q25 = () => {
+    let fib = []
+    fib[0] = 0
+    fib[1] = 0
+    fib[2] = 1
+    counter = 0
+    while (String(BigInt(fib[0])).length != 1000) {
+        fib[0] = BigInt(fib[1]) + BigInt(fib[2])
+        fib[1] = BigInt(fib[2])
+        fib[2] = BigInt(fib[0])
+        counter++
+    }
+    console.log(counter)
 }
