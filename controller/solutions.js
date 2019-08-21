@@ -1,6 +1,6 @@
 // SOLUTION 1
 module.exports.q1 = () => {
-    var i, sum;
+    let i, sum;
     sum = 0;
 
 
@@ -15,7 +15,7 @@ module.exports.q1 = () => {
 // SOLUTION 2
 
 module.exports.q2 = () => {
-    var num1 = 0,
+    let num1 = 0,
         num2 = 1,
         fib = 0,
         i, sum = 0;
@@ -34,13 +34,13 @@ module.exports.q2 = () => {
 // SOLUTION 3
 
 module.exports.q3 = () => {
-    var N = 600851475143;
+    let N = 600851475143;
 
     while (N % 2 == 0) {
         N /= 2;
     }
 
-    for (var factor = 3; factor < N; factor += 2) {
+    for (let factor = 3; factor < N; factor += 2) {
         while (N % factor == 0 && factor < N) {
             N /= factor;
         }
@@ -51,10 +51,10 @@ module.exports.q3 = () => {
 // SOLUTION 4
 
 module.exports.q4 = () => {
-    var max = 0,
+    let max = 0,
         sum
-    for (var i = 100; i < 1000; i++) {
-        for (var j = i; j < 1000; j++) {
+    for (let i = 100; i < 1000; i++) {
+        for (let j = i; j < 1000; j++) {
             sum = i * j
             if (sum > max) {
                 if (sum.toString().split("").reverse().join("") == sum.toString()) {
@@ -69,12 +69,12 @@ module.exports.q4 = () => {
 // SOLUTION 5
 
 module.exports.q5 = () => {
-    var number = 20;
-    var isFound = false;
-    var checkList = [2, 3, 5, 7, 9, 11, 13, 16, 17, 19];
+    let number = 20;
+    let isFound = false;
+    let checkList = [2, 3, 5, 7, 9, 11, 13, 16, 17, 19];
 
     while (!isFound) {
-        var divided = true;
+        let divided = true;
         for (let check of checkList) {
             if (number % check != 0) {
                 divided = false;
@@ -94,14 +94,14 @@ module.exports.q5 = () => {
 // SOLUTION 6
 
 module.exports.q6 = () => {
-    var sum = 0
-    for (var i = 1; i <= 100; i++) {
+    let sum = 0
+    for (let i = 1; i <= 100; i++) {
         sum += i
     }
     sum = Math.pow(sum, 2)
 
-    var sum2 = 0
-    for (var j = 1; j <= 100; j++) {
+    let sum2 = 0
+    for (let j = 1; j <= 100; j++) {
         sum2 += Math.pow(j, 2)
     }
     console.log(sum2 - sum)
@@ -111,7 +111,7 @@ module.exports.q6 = () => {
 
 module.exports.q7 = () => {
     count = 0
-    var prime, j, i = 2
+    let prime, j, i = 2
     find = 10001
 
     while (count < find) {
@@ -172,7 +172,7 @@ module.exports.q8 = () => {
 // SOLUTION 9
 
 module.exports.q9 = () => {
-    var a, b, c, sum, c2
+    let a, b, c, sum, c2
 
     for (a = 0; a < 1000; a++) {
         for (b = a; b < 1000; b++) {
@@ -193,7 +193,7 @@ module.exports.q10 = () => {
     let prime = 0
     let arr = []
     while (i < 2000000) {
-        for (var j = Math.ceil(Math.sqrt(i)); 1 < j; j--) {
+        for (let j = Math.ceil(Math.sqrt(i)); 1 < j; j--) {
             if (i != j && i % j == 0) break
         }
         if (j == 1) {
@@ -214,7 +214,7 @@ module.exports.q11 = () => {
 // SOLUTION 12
 
 module.exports.q12 = () => {
-    var x = 0,
+    let x = 0,
         y = 1
 
     while (factors(x).length <= 500) {
@@ -361,10 +361,10 @@ module.exports.q13 = () => {
 module.exports.q14 = () => {
     const number = 1000000;
 
-    var maxChain = 0,
+    let maxChain = 0,
         sequence
 
-    for (var i = 2; i < number; i++) {
+    for (let i = 2; i < number; i++) {
         sequence = i;
         counter = 1
         while (sequence != 1) {
@@ -389,14 +389,14 @@ module.exports.q15 = () => {
 
     let solution = size => {
 
-        var dp = new Array(size + 1)
-        for (var i = 0; i <= size; i++)
+        let dp = new Array(size + 1)
+        for (let i = 0; i <= size; i++)
             dp[i] = new Array(size + 1).fill(0)
 
         dp[0][0] = 1
 
-        for (var i = 0; i <= size; i++) {
-            for (var j = 0; j <= size; j++) {
+        for (let i = 0; i <= size; i++) {
+            for (let j = 0; j <= size; j++) {
                 if (i) dp[i][j] += dp[i - 1][j]
                 if (j) dp[i][j] += dp[i][j - 1]
             }
@@ -421,13 +421,71 @@ module.exports.q16 = () => {
 // SOLUTION 17
 
 module.exports.q17 = () => {
-    let triangle =
-        "3" +
-        "7 4" +
-        "2 4 6" +
-        "8 5 9 3"
+    let proper = [
+        0,
+        "one".length,
+        "two".length,
+        "three".length,
+        "four".length,
+        "five".length,
+        "six".length,
+        "seven".length,
+        "eight".length,
+        "nine".length,
+        "ten".length,
+        "eleven".length,
+        "twelve".length,
+        "thirteen".length,
+        "fourteen".length,
+        "fifteen".length,
+        "sixteen".length,
+        "seventeen".length,
+        "eighteen".length,
+        "nineteen".length
+    ]
+    let tenth = [
+        "twenty".length,
+        "thirty".length,
+        "forty".length,
+        "fifty".length,
+        "sixty".length,
+        "seventy".length,
+        "eighty".length,
+        "ninety".length
+    ]
 
-    triangle = triangle.toString().split("")
+    below100 = n => {
+        if (n < 20)
+            return proper[n]
+
+        return tenth[n / 10 - 2 | 0] + proper[n % 10]
+    }
+
+    numberLenght = n => {
+        if (n < 100)
+            return below100(n)
+
+        let res = 0
+        let h = Math.floor(n / 100) % 10
+        let t = Math.floor(n / 1000)
+        let s = n % 100
+
+        if (n == 1000)
+            res += below100(t) + "thousand".length
+        if (h != 0)
+            res += proper[h] + "hundred".length;
+        if (s != 0)
+            res += "and".length + below100(s)
+        return res
+    }
+
+    solution = n => {
+        let num = 0
+        for (let i = 0; i <= n; i++)
+            num += numberLenght(i)
+        return num
+    }
+    console.log(solution(1000))
 }
 
 // SOLUTION 18
@@ -457,6 +515,17 @@ module.exports.q20 = () => {
         sum += parseInt(number)
 
     console.log(sum)
+}
+
+// SOLUTION 22
+
+const fs = require("fs")
+module.exports.q22 = () => {
+    let text = fs.readFile("names.txt", (err, data) => {
+        if (err)
+            err
+        console.log(data.length)
+    })
 }
 
 // SOLUTION 25
