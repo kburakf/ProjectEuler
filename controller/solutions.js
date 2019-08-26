@@ -190,10 +190,11 @@ module.exports.q9 = () => {
 module.exports.q10 = () => {
     let sum = 0,
         i = 2
+    let j = 0
     let prime = 0
     let arr = []
     while (i < 2000000) {
-        for (let j = Math.ceil(Math.sqrt(i)); 1 < j; j--) {
+        for (j = Math.ceil(Math.sqrt(i)); 1 < j; j--) {
             if (i != j && i % j == 0) break
         }
         if (j == 1) {
@@ -234,7 +235,7 @@ module.exports.q11 = () => {
 
     let sum1 = 0,
         max = 0,
-        i, j = -1,
+        j = 0,
         k = 0
 
     for (k; k < 397; k++) {
@@ -245,18 +246,22 @@ module.exports.q11 = () => {
         sum1 = 0
     }
 
-    for (j++; j < 337; j++) {
+    for (j; j < 337; j++) {
         // Top to bottom
         sum2 = parseInt(numbers[j]) * parseInt(numbers[j + 20]) * parseInt(numbers[j + 40]) * parseInt(numbers[j + 60])
 
         // Diagonal
         sum3 = parseInt(numbers[j]) * parseInt(numbers[j + 21]) * parseInt(numbers[j + 42]) * parseInt(numbers[j + 63])
 
-        if (sum2 < sum3 && max < sum3)
+        sum4 = parseInt(numbers[j + 3]) * parseInt(numbers[j + 22]) * parseInt(numbers[j + 41]) * parseInt(numbers[j + 60])
+
+        if (sum2 < sum3 && sum4 < sum3 && max < sum3)
             max = sum3
-        if (sum3 < sum2 && max < sum2)
+        if (sum3 < sum2 && sum4 < sum2 && max < sum2)
             max = sum2
-        sum2 = 0, sum3 = 0
+        if (sum2 < sum4 && sum3 < sum4 && max < sum4)
+            max = sum4
+        sum2 = 0, sum3 = 0, sum4 = 0
     }
     console.log(max)
 }
@@ -549,11 +554,11 @@ module.exports.q18 = () => {
 module.exports.q19 = () => {
     let moment = require("moment")
     sundays = 0
-    let current = moment("1901-01-01","YYYY-MM-DD")
-    while(current.year()<=2000){
-        if(!current.day())
-        sundays++
-        current.add(1,"month")
+    let current = moment("1901-01-01", "YYYY-MM-DD")
+    while (current.year() <= 2000) {
+        if (!current.day())
+            sundays++
+        current.add(1, "month")
     }
     console.log(sundays)
 }
