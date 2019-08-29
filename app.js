@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', controller.q15);
 // app.use('/', controller.q16);
 // app.use('/', controller.q17);
-app.use('/', controller.q18);
+// app.use('/', controller.q18);
 // app.use('/', controller.q19);
 // app.use('/', controller.q20);
 // app.use('/', controller.q22);
@@ -49,6 +49,7 @@ app.use('/', controller.q18);
 // app.use('/', controller.q26);
 // app.use('/', controller.q29);
 // app.use('/', controller.q30);
+app.use('/', controller.q67);
 
 
 

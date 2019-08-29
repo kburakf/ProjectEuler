@@ -15,5 +15,18 @@
     "jade": "~1.11.0",
     "moment": "^2.24.0",
     "morgan": "~1.9.1"
-  }
+  },
+  "description": "Project Euler",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kburakf/ProjectEuler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kburakf/ProjectEuler/issues"
+  },
+  "homepage": "https://github.com/kburakf/ProjectEuler#readme"
 }

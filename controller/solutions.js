@@ -546,7 +546,7 @@ module.exports.q17 = () => {
 // SOLUTION 18
 
 module.exports.q18 = () => {
-    let triangle = [
+    let t = [
         [75],
         [95, 64],
         [17, 47, 82],
@@ -562,15 +562,11 @@ module.exports.q18 = () => {
         [91, 71, 52, 38, 17, 14, 91, 43, 58, 50, 27, 29, 48],
         [63, 66, 04, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31],
         [04, 62, 98, 27, 23, 09, 70, 98, 73, 93, 38, 53, 60, 04, 23],
-    ];
-
-    const solution = t => {
-        for (let i = t.length - 2; i >= 0; i--)
-            for (let j = 0; j <= i; j++)
-                t[i][j] += Math.max(t[i + 1][j], t[i + 1][j + 1])
-        return triangle[0][0]
-    }
-    solution(triangle)
+    ]
+    for (let i = t.length - 2; i >= 0; i--)
+        for (let j = 0; j <= i; j++)
+            t[i][j] += Math.max(t[i + 1][j], t[i + 1][j + 1])
+    console.log(t[0][0])
 }
 
 // SOLUTION 19
@@ -701,4 +697,42 @@ module.exports.q30 = () => {
         return console.log(sum)
     }
     solution()
+}
+
+// SOLUTION 67 
+
+module.exports.q67 = () => {
+
+    function cleanData(data) {
+        let lines = data.split("\n")
+        let line
+
+        let triangle = []
+        for (let i = 0; i < lines.length; i++) {
+            line = lines[i].split(" ")
+            for (let j = 0; j < line.length; j++)
+                line[j] = parseInt(line[j], 10)
+            triangle.push(line)
+        }
+        return triangle
+    }
+
+    const fs = require("fs")
+
+    function app() {
+        fs.readFile("../67.txt", "utf8", (err, data) => {
+            if (err) throw err
+
+            let triangle = cleanData(data)
+            let depth = triangle.length - 2
+
+            while (depth >= 0) {
+                for (let i = 0; i <= depth; i++)
+                    triangle[depth][i] += Math.max(triangle[depth + 1][i], triangle[depth + 1])
+                depth -= 1
+            }
+            console.log(triangle[0][0])
+        })
+    }
+    app()
 }
