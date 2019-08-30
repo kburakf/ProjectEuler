@@ -600,6 +600,30 @@ module.exports.q20 = () => {
     console.log(sum)
 }
 
+// SOLUTION 21
+
+module.exports.q21 = () => {
+    let total = 10000,
+        a, b, sum = 0
+    for (let i = 1; i < total; i++) {
+        a = 0
+        for (let j = 1; j < i; j++) {
+            if (i % j == 0)
+                a += j
+        }
+        b = 0
+        for (let k = 1; k < a; k++) {
+            if (a % k == 0)
+                b += k
+        }
+
+        if (b == i && b != a)
+            sum += i
+    }
+    console.log(sum)
+
+}
+
 // SOLUTION 22
 
 module.exports.q22 = () => {
@@ -701,7 +725,7 @@ module.exports.q30 = () => {
 
 // SOLUTION 67 
 
-module.exports.q67 = () => {
+/* module.exports.q67 = () => {
 
     function cleanData(data) {
         let lines = data.split("\n")
@@ -720,8 +744,7 @@ module.exports.q67 = () => {
     const fs = require("fs")
 
     function app() {
-        fs.readFile("../67.txt", "utf8", (err, data) => {
-            if (err) throw err
+            let data = process.env.q67
 
             let triangle = cleanData(data)
             let depth = triangle.length - 2
@@ -732,7 +755,7 @@ module.exports.q67 = () => {
                 depth -= 1
             }
             console.log(triangle[0][0])
-        })
+        
     }
     app()
-}
+} */
