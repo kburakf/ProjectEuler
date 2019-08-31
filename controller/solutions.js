@@ -616,7 +616,6 @@ module.exports.q21 = () => {
             if (a % k == 0)
                 b += k
         }
-
         if (b == i && b != a)
             sum += i
     }
@@ -721,6 +720,15 @@ module.exports.q30 = () => {
         return console.log(sum)
     }
     solution()
+}
+
+// SOLUTION 48
+
+module.exports.q48 = () => {
+    let sum = 0
+    for (let i = 1; i <= 1000; i++)
+        sum += BigInt(i ** i)
+    console.log(sum)
 }
 
 // SOLUTION 67 
