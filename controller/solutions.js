@@ -690,9 +690,9 @@ module.exports.q28 = () => {
     let sum = 1,
         initial = 1
 
-    for (let i = 3; i <= 1001; i += 2) {
+    for (let i = 2; i <= 1001; i += 2) {
         for (let j = 1; j < 5; j++) {
-            initial += i - 1
+            initial += i
             sum += initial
         }
     }
@@ -742,6 +742,29 @@ module.exports.q30 = () => {
     solution()
 }
 
+// SOLUTION 31
+
+module.exports.q31 = () => {
+    let count = 0
+
+    for (let p200 = 200; p200 >= 0; p200 -= 200) {
+        for (let p100 = p200; p100 >= 0; p100 -= 100) {
+            for (let p50 = p100; p50 >= 0; p50 -= 50) {
+                for (let p20 = p50; p20 >= 0; p20 -= 20) {
+                    for (let p10 = p20; p10 >= 0; p10 -= 10) {
+                        for (let p5 = p10; p5 >= 0; p5 -= 5) {
+                            for (let p2 = p5; p2 >= 0; p2 -= 2) {
+                                count++
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    console.log(count)
+}
+
 // SOLUTION 48
 
 module.exports.q48 = () => {
@@ -769,6 +792,22 @@ module.exports.q36 = () => {
             sum += i
     }
     console.log(sum)
+}
+
+// SOLUTION 50
+
+module.exports.q50 = () => {
+    function isPrime(number) {
+        let sum = 0
+        for (let i = 2; i <= number; i++) {
+            let prime = true
+            for (let j = 2; j < i; j++)
+                if (i % j == 0) prime = false
+            if (prime) sum += i
+        }
+        console.log(sum)
+    }
+    isPrime(13)
 }
 
 // SOLUTION 67 
