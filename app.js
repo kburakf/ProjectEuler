@@ -53,8 +53,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', controller.q30);
 // app.use('/', controller.q31);
 // app.use('/', controller.q36);
+app.use('/', controller.q45);
 // app.use('/', controller.q48);
-app.use('/', controller.q50);
+// app.use('/', controller.q50);
 // app.use('/', controller.q67);
 
 
