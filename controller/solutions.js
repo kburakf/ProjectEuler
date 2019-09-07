@@ -777,6 +777,31 @@ module.exports.q36 = () => {
     console.log(sum)
 }
 
+// SOLUTION 44
+
+module.exports.q44 = () => {
+    function pentagonal(p) {
+        let result = p * (3 * p - 1) / 2
+        return result
+    }
+
+    let i = 1
+    result = 0,
+        check = true
+
+    while (check) {
+        i++
+        let p1 = pentagonal(i)
+        for (let j = i - 1; 0 < j; j--) {
+            let p2 = pentagonal(j)
+            if (pentagonal(p1 - p2) && pentagonal(p1 + p2)) {
+                result = p1 - p2
+                return console.log(result)
+            }
+        }
+    }
+}
+
 // SOLUTION 45
 
 module.exports.q45 = () => {
@@ -789,7 +814,7 @@ module.exports.q45 = () => {
             pentagonal = p * (3 * p - 1) / 2,
             hexagonal = h * (h * 2 - 1)
 
-        let min = Math.min(hexagonal, triangle, pentagonal)
+        let min = Math.min(triangle, pentagonal, hexagonal)
 
         if (min == triangle && min == pentagonal && min == hexagonal)
             return console.log(min)
