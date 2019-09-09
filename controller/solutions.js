@@ -765,6 +765,29 @@ module.exports.q31 = () => {
     console.log(count)
 }
 
+module.exports.q34 = () => {
+    function factorial(number) {
+        let facto = 1
+        for (let i = 1; i <= number; i++)
+            facto *= i
+
+        return facto
+    }
+    let sum = 0,
+        facto = 0
+    for (let i = 1; i < 370000; i++) {
+        let bol = i.toString().split("")
+        for (let j = 0; j < bol.length; j++)
+            sum += factorial(parseInt(bol[j]))
+
+        if (sum == i) {
+            facto += sum
+            sum = 0
+        }
+        sum = 0
+    }
+    console.log(facto)
+}
 
 // SOLUTION 36
 
@@ -779,9 +802,7 @@ module.exports.q36 = () => {
 
 // SOLUTION 34
 
-module.exports.q34 = () => {
-    
-}
+
 
 // SOLUTION 37
 
