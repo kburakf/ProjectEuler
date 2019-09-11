@@ -787,6 +787,16 @@ module.exports.q34 = () => {
         sum = 0
     }
     console.log(facto)
+
+    function test(num) {
+        var result = 0;
+        var digits = String(num).split('');
+        for (var i = 0; i < digits.length; i++) {
+            result += factorial(Number(digits[i]));
+        }
+        if (num === result) return true;
+        return false;
+    }
 }
 
 // SOLUTION 36
