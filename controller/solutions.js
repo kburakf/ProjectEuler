@@ -773,30 +773,20 @@ module.exports.q34 = () => {
 
         return facto
     }
-    let sum = 0,
-        facto = 0
-    for (let i = 1; i < 370000; i++) {
-        let bol = i.toString().split("")
+
+    let facto = 0
+    for (let i = 3; i < 370000; i++) {
+        let sum = 0
+        let bol = String(i).split("")
         for (let j = 0; j < bol.length; j++)
             sum += factorial(parseInt(bol[j]))
 
-        if (sum == i) {
+        if (sum === i) {
             facto += sum
             sum = 0
         }
-        sum = 0
     }
     console.log(facto)
-
-    function test(num) {
-        var result = 0;
-        var digits = String(num).split('');
-        for (var i = 0; i < digits.length; i++) {
-            result += factorial(Number(digits[i]));
-        }
-        if (num === result) return true;
-        return false;
-    }
 }
 
 // SOLUTION 36
