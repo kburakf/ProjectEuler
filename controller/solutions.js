@@ -269,20 +269,10 @@ module.exports.q11 = () => {
 // SOLUTION 12
 
 module.exports.q12 = () => {
-    let x = 0,
-        y = 1
-
-    while (factors(x).length <= 500) {
-        x += y
-        y++
-    }
-
-    console.log(x)
-
     function factors(n) {
         let arr = [],
-            i = 1
-        max = n
+            i = 1,
+            max = n
 
         while (i < max) {
             if (n % i === 0) {
@@ -294,8 +284,19 @@ module.exports.q12 = () => {
             }
             i++
         }
-        return arr.sort((a, b) => a - b)
+        return arr
     }
+
+    let x = 0,
+        y = 1
+
+    while (factors(x).length <= 500) {
+        x += y
+        y++
+    }
+
+    console.log(x)
+
 }
 
 // SOLUTION 13
@@ -865,26 +866,50 @@ module.exports.q36 = () => {
 //     p39(1000)
 // }
 
+// SOLUTION 43
+
+module.exports.q43 = () => {
+    function isPrime(number) {
+        for (let i = 2; i < number / 2; i++) {
+            if (number % i == 0) return false
+        }
+        return true
+    }
+
+    let number = ("1234567890").split("")
+
+
+
+}
+
 // SOLUTION 44
 
 module.exports.q44 = () => {
     function pentagonal(p) {
-        let result = p * (3 * p - 1) / 2
-        return result
+        let result = (Math.sqrt(1 + 24 * p) + 1.0) / 6.0
+        let a = String(result)
+        if (parseInt(a) == result) return true
+        else return false
     }
 
+    function pentagonal2(n) {
+        let result = n * (3 * n - 1) / 2
+        return result
+    }
     let i = 1
     result = 0,
         check = true
 
     while (check) {
         i++
-        let p1 = pentagonal(i)
+        let p1 = pentagonal2(i)
         for (let j = i - 1; 0 < j; j--) {
-            let p2 = pentagonal(j)
+            let p2 = pentagonal2(j)
             if (pentagonal(p1 - p2) && pentagonal(p1 + p2)) {
                 result = p1 - p2
                 return console.log(result)
+                check = false
+                break
             }
         }
     }
