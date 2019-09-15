@@ -834,19 +834,26 @@ module.exports.q36 = () => {
 
 // SOLUTION 37
 
-// module.exports.q37 = () => {
-//     let sum =0
-//     for(let i=1001;i<9999;i+=2){
-//         let bol = i.toString().split("")
-//         for(let j = 0;j<bol.length;j++){
-//             let conv = parseInt(bol[j])
-//             for(let k=9;0<k;k--){
+module.exports.q37 = () => {
+    let sum = 0,
+        count = 0
 
-//             }
-//         }
-//     }
-// }
-
+    function isPrime(num) {
+        for (let i = 2; i < num; i++) {
+            if (i % num == 0) return false
+            return true
+        }
+        let i = 13
+        while (count != 11) {
+            if (isPrime(i)) {
+                let conv = String(i)
+                for (let j = 0; j < conv.length; j++) {
+                    
+                }
+            }
+        }
+    }
+}
 // SOLUTION 39
 
 // module.exports.q39 = () => {
