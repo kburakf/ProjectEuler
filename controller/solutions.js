@@ -888,8 +888,12 @@ module.exports.q37 = () => {
 
 module.exports.q42 = () => {
     function isTriangle(num) {
-        let triangle = 0.5 * num * (num + 1.0)
-        return triangle
+        let arr = []
+        for (let i = 0; i <= num; i++) {
+            let triangle = 0.5 * num * (num + 1.0)
+            arr.push(triangle)
+        }
+        return arr
     }
     isTriangle(11)
     let array = [
@@ -898,17 +902,13 @@ module.exports.q42 = () => {
     let count = 0
     for (let i = 0; i < array.length; i++) {
         let sum = 0
-        let k = 0
         for (let j = 0; j < array[i].length; j++) {
             let bol = array[i].split("")[j].charCodeAt(0) - 64
             sum += bol
         }
-        while (sum <= isTriangle(k)) {
-            k++
-            if (sum == isTriangle(k)) {
-                count++
-                break
-            }
+        for (let k = 0; k < sum; k++) {
+            if (sum == isTriangle(k)) count++
+            break
         }
     }
     console.log(count)
