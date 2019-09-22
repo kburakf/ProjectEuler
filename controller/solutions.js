@@ -1008,6 +1008,22 @@ module.exports.q48 = () => {
     console.log(result)
 }
 
+module.exports.q49 = () => {
+    function isPrime(num) {
+        for (let i = 2; i <= num / 2; i++)
+            if (num % i == 0) return false
+        return true
+    }
+    for (let i = 1000; i < 9999; i++) {
+        if (isPrime(i) && isPrime(i + 3300) && isPrime(i + 6600)) {
+            for(let k=0;k<bol.length){
+                for(let j=0;j<4;j++)
+            }
+            let bol = String(i).split("")
+        }
+    }
+}
+
 // SOLUTION 50
 
 module.exports.q50 = () => {
