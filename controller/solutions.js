@@ -1015,11 +1015,10 @@ module.exports.q49 = () => {
         return true
     }
     for (let i = 1000; i < 9999; i++) {
-        if (isPrime(i) && isPrime(i + 3300) && isPrime(i + 6600)) {
-            for(let k=0;k<bol.length){
-                for(let j=0;j<4;j++)
-            }
-            let bol = String(i).split("")
+        let i3 = i + 3300,
+            i6 = i + 6600
+        if (isPrime(i) && isPrime(i3) && isPrime(i6) && i6<9999) {
+            console.log(i,i3,i6)
         }
     }
 }
