@@ -1014,11 +1014,30 @@ module.exports.q49 = () => {
             if (num % i == 0) return false
         return true
     }
-    for (let i = 1000; i < 9999; i++) {
+    let count = 0
+    for (let i = 1000; i < 3999; i++) {
         let i3 = i + 3300,
             i6 = i + 6600
-        if (isPrime(i) && isPrime(i3) && isPrime(i6) && i6<9999) {
-            console.log(i,i3,i6)
+        if (isPrime(i) && isPrime(i3) && isPrime(i6)) {
+            let boli = String(i).split("")
+            let bol3 = String(i3).split("")
+            let j = 0
+            for (let k = 0; k < boli.length; k++) {
+                if (boli[k] == bol3[j])
+                    count++
+                j++
+            }
+            if (count == 4) {
+                let n = 0
+                let bol6 = String(i6).split("")
+                for (let m = 0; m < bol6.length; m++) {
+                    if (bol3[m] == bol6[n])
+                        count++
+                    n++
+                }
+            }
+            if (count == 8)
+                console.log(i, i3, i6)
         }
     }
 }
