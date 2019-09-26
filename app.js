@@ -1,56 +1,57 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var controller = require("./controller/solutions.js")
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var app = express();
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+let controller = require("./controller/solutions.js")
+let indexRouter = require('./routes/index');
+let usersRouter = require('./routes/users');
+let app = express();
 
 // SOLUTIONS
 
-var problem1 = require("./controller/problem1.js")
-var problem2 = require("./controller/problem2.js")
-var problem3 = require("./controller/problem3.js")
-var problem4 = require("./controller/problem4.js")
-var problem5 = require("./controller/problem5.js")
-var problem6 = require("./controller/problem6.js")
-var problem7 = require("./controller/problem7.js")
-var problem8 = require("./controller/problem8.js")
-var problem9 = require("./controller/problem9.js")
-var problem10 = require("./controller/problem10.js")
-var problem11 = require("./controller/problem11.js")
-var problem12 = require("./controller/problem12.js")
-var problem13 = require("./controller/problem13.js")
-var problem14 = require("./controller/problem14.js")
-var problem15 = require("./controller/problem15.js")
-var problem16 = require("./controller/problem16.js")
-var problem17 = require("./controller/problem17.js")
-var problem18 = require("./controller/problem18.js")
-var problem19 = require("./controller/problem19.js")
-var problem20 = require("./controller/problem20.js")
-var problem21 = require("./controller/problem21.js")
-var problem22 = require("./controller/problem22.js")
-var problem25 = require("./controller/problem25.js")
-var problem26 = require("./controller/problem26.js")
-var problem28 = require("./controller/problem28.js")
-var problem29 = require("./controller/problem29.js")
-var problem30 = require("./controller/problem30.js")
-var problem31 = require("./controller/problem31.js")
-var problem34 = require("./controller/problem34.js")
-var problem35 = require("./controller/problem35.js")
-var problem36 = require("./controller/problem36.js")
-var problem37 = require("./controller/problem37.js")
-var problem39 = require("./controller/problem39.js")
-var problem42 = require("./controller/problem42.js")
-var problem43 = require("./controller/problem43.js")
-var problem44 = require("./controller/problem44.js")
-var problem45 = require("./controller/problem45.js")
-var problem48 = require("./controller/problem48.js")
-var problem49 = require("./controller/problem49.js")
-var problem50 = require("./controller/problem50.js")
-var problem67 = require("./controller/problem67.js")
+let problem1 = require("./controller/problem1.js")
+let problem2 = require("./controller/problem2.js")
+let problem3 = require("./controller/problem3.js")
+let problem4 = require("./controller/problem4.js")
+let problem5 = require("./controller/problem5.js")
+let problem6 = require("./controller/problem6.js")
+let problem7 = require("./controller/problem7.js")
+let problem8 = require("./controller/problem8.js")
+let problem9 = require("./controller/problem9.js")
+let problem10 = require("./controller/problem10.js")
+let problem11 = require("./controller/problem11.js")
+let problem12 = require("./controller/problem12.js")
+let problem13 = require("./controller/problem13.js")
+let problem14 = require("./controller/problem14.js")
+let problem15 = require("./controller/problem15.js")
+let problem16 = require("./controller/problem16.js")
+let problem17 = require("./controller/problem17.js")
+let problem18 = require("./controller/problem18.js")
+let problem19 = require("./controller/problem19.js")
+let problem20 = require("./controller/problem20.js")
+let problem21 = require("./controller/problem21.js")
+let problem22 = require("./controller/problem22.js")
+let problem25 = require("./controller/problem25.js")
+let problem26 = require("./controller/problem26.js")
+let problem28 = require("./controller/problem28.js")
+let problem29 = require("./controller/problem29.js")
+let problem30 = require("./controller/problem30.js")
+let problem31 = require("./controller/problem31.js")
+let problem34 = require("./controller/problem34.js")
+let problem35 = require("./controller/problem35.js")
+let problem36 = require("./controller/problem36.js")
+let problem37 = require("./controller/problem37.js")
+let problem39 = require("./controller/problem39.js")
+let problem42 = require("./controller/problem42.js")
+let problem43 = require("./controller/problem43.js")
+let problem44 = require("./controller/problem44.js")
+let problem45 = require("./controller/problem45.js")
+let problem48 = require("./controller/problem48.js")
+let problem49 = require("./controller/problem49.js")
+let problem50 = require("./controller/problem50.js")
+let problem52 = require("./controller/problem52.js")
+let problem67 = require("./controller/problem67.js")
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -104,8 +105,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', problem44.q44);
 // app.use('/', problem45.q45);
 // app.use('/', problem48.q48);
-app.use('/', problem49.q49);
+// app.use('/', problem49.q49);
 // app.use('/', problem50.q50);
+app.use('/', problem52.q52);
 // app.use('/', problem67.q67);
 
 
