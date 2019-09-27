@@ -1,18 +1,27 @@
 // SOLUTION 52
 
 module.exports.q52 = () => {
-    let check = false
-    let i = 0
-    while (false) {
-        i++
-        let sec = String(i).split("")
-        for (let j = 0; j < sec.length; j++) {
-            for (let k = 0; k <= 9; k++) {
-                if (k == sec[j]){
-                    let i2 = i * 2
-                    
-                }
-            }
+    function getDigitSet(number) {
+        const numArr = number.toString().split('').map(el => parseInt(el));
+        const len = numArr.length;
+        const res = [0, 0, 0, 0, 0, 0];
+        while (numArr.length) {
+            let temp = numArr.pop();
+            res[temp]++;
+        }
+        return JSON.stringify(res.join(''));
+    }
+    for (let i = 1; i < 150000; i++) {
+        if (
+            getDigitSet(i) ==
+            getDigitSet(i * 2) &&
+            getDigitSet(i * 3) ==
+            getDigitSet(i * 4) &&
+            getDigitSet(i * 5) ==
+            getDigitSet(i * 6)
+        ){
+            console.log(i);
+            break;
         }
     }
 }
