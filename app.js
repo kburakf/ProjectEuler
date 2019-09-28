@@ -51,6 +51,7 @@ let problem48 = require("./controller/problem48.js")
 let problem49 = require("./controller/problem49.js")
 let problem50 = require("./controller/problem50.js")
 let problem52 = require("./controller/problem52.js")
+let problem53 = require("./controller/problem53.js")
 let problem67 = require("./controller/problem67.js")
 
 const dotenv = require('dotenv');
@@ -107,7 +108,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', problem48.q48);
 // app.use('/', problem49.q49);
 // app.use('/', problem50.q50);
-app.use('/', problem52.q52);
+// app.use('/', problem52.q52);
+app.use('/', problem53.q53);
 // app.use('/', problem67.q67);
 
 

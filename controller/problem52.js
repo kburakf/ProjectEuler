@@ -19,7 +19,7 @@ module.exports.q52 = () => {
             getDigitSet(i * 4) &&
             getDigitSet(i * 5) ==
             getDigitSet(i * 6)
-        ){
+        ) {
             console.log(i);
             break;
         }
