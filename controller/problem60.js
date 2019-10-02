@@ -13,19 +13,19 @@ module.exports.q60 = (req, res) => {
         i = 1,
         sum = 0
     let arr = []
-
-    // while (count != 5) {
-    //     i++
-    //     if (isPrime(i)) arr.push(i)
-    //     for (let j = 0; j < arr.length; j++) {
-    //         for (let k = 0; k < arr.length; k++) {
-    //             if (isPrime(parseInt(String(arr[j]) + String(arr[k]))) &&
-    //                 isPrime(parseInt(String(arr[k])) + String(arr[j]))) {
-    //                 count++
-    //                 sum += arr[j]
-    //             }
-    //         }
-    //     }
-    // }
+    while (count != 5) {
+        i++
+        if (isPrime(i)) arr.push(i)
+        for (let j = 0; j < arr.length; j++) {
+            for (let k = 0; k < arr.length; k++) {
+                let rev = (String(arr[j]) + String(arr[k])).split("").reverse().join("")
+                if (isPrime(parseInt(String(arr[j]) + String(arr[k]))) &&
+                    isPrime(rev)) {
+                    count++
+                    sum += arr[j]
+                }
+            }
+        }
+    }
     console.log(sum)
 }

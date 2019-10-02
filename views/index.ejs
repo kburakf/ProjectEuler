@@ -1,0 +1,12 @@
+<body onload="setInterval(changeColor,2500)"></body>
+<h1 id="a" align="center" style="font-size: 100px;
+margin-top: 310px">WORK MORE, DO BEST !</h1>
+<script>
+  function changeColor(){
+    let x = document.getElementById("a")
+    let color = ["red","green","gold","purple","darkorange","blue","darkblue","indigo","lightcoral","lightseegreen","grey","firebrick","chocolate","crimson","tomato","deeppink","dimgray","saddlebrown","navy","deepskyblue","cyan","yellowgreen","limegreen","darkmagenta"]
+    let random = Math.floor(Math.random()*color.length)
+    x.style.color=color[random]
+  }
+</script>
+</body>
